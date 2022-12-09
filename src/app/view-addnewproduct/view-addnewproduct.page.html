@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+  </ion-buttons>
+    <ion-title>
+      Agregar nuevo producto
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-row>
+    <ion-col size-lg="12"> <!--cambiar a 6-->
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">Escriba nombre del producto:</ion-label>
+          <ion-input [(ngModel)]="name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Descripcion:</ion-label>
+          <ion-input [(ngModel)]="description"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Precio:</ion-label>
+          <ion-input [(ngModel)]="price"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">URL de imagen:</ion-label>
+          <ion-input [(ngModel)]="photo"></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+    <!--ion-col size-lg="6">
+      //aqui irá para elegir imagenes desde dispositivo
+    </!--ion-col-->
+  </ion-row>
+  <ion-row>
+    <ion-button expand="block" (click)="addProduct()" *ngIf="name && description && price && photo">
+      <ion-icon name="add"></ion-icon>
+    </ion-button>
+  </ion-row>
+</ion-content>
